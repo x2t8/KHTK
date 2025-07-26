@@ -1,0 +1,33 @@
+.form-group {
+  margin-bottom: 16px;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.required {
+  color: red;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #3f51b5; /* viền xanh giống ảnh */
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+input[type="text"]:focus {
+  border-color: #1a73e8;
+}

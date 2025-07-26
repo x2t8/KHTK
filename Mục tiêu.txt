@@ -1,0 +1,10 @@
+Danh sách người từng tố cáo (ẩn danh hoặc công khai tuỳ chọn).
+Hệ thống điểm tín nhiệm người tố cáo
+Kết nối chatbot AI để trả lời tự động:
+
+Bản đồ lừa đảo trực quan: Hiện vụ việc theo khu vực.
+Tra cứu nhanh số điện thoại, đường link hoặc tài khoản ngân hàng đã từng bị tố cáo.
+Tự động quét nội dung website, kiểm tra các yếu tố bất thường.
+Thống kê xu hướng lừa đảo theo thời gian, khu vực hoặc hình thức để đưa ra cảnh báo sớm.
+
+( đã xong )Chế độ khẩn cấp (ẩn danh hoàn toàn): Khi người tố cáo sợ bị trả thù.

@@ -1,0 +1,126 @@
+/* upload.css */
+.preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preview-container img {
+  max-width: 100px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+  display: none;
+}
+
+.progress-bar-fill {
+  width: 0%;
+  height: 8px;
+  background-color: red;
+  transition: width 0.3s;
+}
+
+.upload-status {
+  color: red;
+  margin: 5px 0;
+  font-weight: bold;
+  margin-top: 15px;
+}#lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightboxContent {
+  position: relative;
+  max-width: 50%;
+  max-height: 80%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #000;
+}
+
+#lightboxContent img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+#lightboxClose {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 4px 10px;
+  cursor: pointer;
+  z-index: 1001;
+}
+/*<!-- Lightbox overlay -->*/
+#lightboxOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightboxContent {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+#lightboxImage {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
+
+#lightboxClose {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: black; /* Nút đen */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+#lightboxClose:hover {
+  background: #222;
+}

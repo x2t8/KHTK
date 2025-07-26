@@ -1,0 +1,18 @@
+/* Style riêng cho trang chủ*/
+/* home.css */
+main {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+
+h2 {
+  color: #0074d9;
+}
+header p {
+  color: white;
+}

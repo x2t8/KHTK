@@ -1,0 +1,68 @@
+.floating-label-group {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.floating-label-group input,
+.floating-label-group textarea {
+  width: 100%;
+  padding: 1.2rem 1rem 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  outline: none;
+}
+
+.floating-label-group label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: #999;
+  background-color: white;
+  padding: 0 10px;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+/* Hiệu ứng khi focus hoặc đã có dữ liệu */
+.floating-label-group input:focus + label,
+.floating-label-group input:not(:placeholder-shown) + label,
+.floating-label-group textarea:focus + label,
+.floating-label-group textarea:not(:placeholder-shown) + label {
+  top: -0.8rem;
+  font-size: 0.75rem;
+  color: #007bff;
+  z-index: 1;
+}
+
+/* Gạch 2 bên label */
+.floating-label-group label::before,
+.floating-label-group label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background-color: #999;
+}
+
+.floating-label-group label::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.floating-label-group label::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+/* Focus effect cho input */
+.floating-label-group input:focus,
+.floating-label-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
