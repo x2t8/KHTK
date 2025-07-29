@@ -1,145 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Cyber Threat Map Clone</title>
+  <meta charset="utf-8">
+  <title>Trang web Chống Lừa Đảo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/form.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/home.css">
   <style>
-    body { margin: 0; background: #000; overflow: hidden; font-family: 'Rajdhani', sans-serif; color: #0ff; }
-    #globeViz { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .cyber-panel {
-      position: absolute; top: 20px; right: 20px;
-      background: rgba(0, 10, 20, 0.8);
-      border: 1px solid #0ff;
-      padding: 15px; border-radius: 5px;
-      max-width: 300px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .cyber-stats {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 10px; margin-top: 15px;
+
+    body {
+      background: radial-gradient(#0a0a0a, #000000);
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+      text-align: center;
     }
-    .stat-item { text-align: center; }
-    .stat-value { font-size: 1.5em; font-weight: bold; color: #f0f; }
-    .hover-popup {
-      position: absolute;
-      background: rgba(0,0,0,0.9);
-      color: #0ff;
-      padding: 10px;
-      border: 1px solid #0ff;
-      border-radius: 5px;
-      font-size: 0.9em;
-      pointer-events: none;
-      display: none;
+
+    .glow-text {
+      font-size: 2rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+      margin-top: 20px;
     }
-    #demoToggle {
-      position: absolute; top: 20px; left: 20px;
-      padding: 10px 20px; background: #000;
-      border: 1px solid #0ff; color: #0ff;
-      cursor: pointer; border-radius: 5px;
+
+    .spinner {
+      width: 120px;
+      height: 120px;
+      border: 8px solid #222;
+      border-top: 8px solid #00ffcc;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+      margin-bottom: 30px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .info {
+      font-size: 1.2rem;
+      color: #888;
+      margin-top: 10px;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="globeViz"></div>
-  <div class="hover-popup" id="popup"></div>
-  <div id="demoToggle" onclick="toggleDemo()">DEMO ON</div>
-  <div class="cyber-panel">
-    <h2>CYBER THREAT GLOBE</h2>
-    <p>Real-time scam detection network</p>
-    <div class="cyber-stats">
-      <div class="stat-item"><div class="stat-value" id="total-threats">0</div><div>TOTAL</div></div>
-      <div class="stat-item"><div class="stat-value" id="high-risk">0</div><div>HIGH</div></div>
-      <div class="stat-item"><div class="stat-value" id="active-now">0</div><div>ACTIVE</div></div>
-      <div class="stat-item"><div class="stat-value" id="new-last5m">0</div><div>NEW/5m</div></div>
-    </div>
-    <div style="margin-top: 20px; font-size: 0.8em;">
-      <p>BMI = Maximum</p>
-      <p>Based on data flow intensity</p>
-    </div>
-  </div>
+  <header>
+  <h1>Chống Lừa Đảo Trực Tuyến</h1>
+  <p>Bảo vệ bạn khỏi các hình thức lừa đảo phổ biến trên Internet</p>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.24.0/dist/globe.gl.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <!-- Nút 3 gạch cho mobile -->
+  <span class="menu-icon">☰</span>
 
-  <script>
-    let demoRunning = true;
-    const globe = Globe()
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-      .backgroundColor('#000000')
-      .showAtmosphere(true)
-      .atmosphereColor('lime')
-      .atmosphereAltitude(0.25)
-      (document.getElementById('globeViz'));
 
-    const scamPoints = [...Array(40)].map(() => ({
-      lat: (Math.random() - 0.5) * 180,
-      lng: (Math.random() - 0.5) * 360,
-      size: Math.random() * 0.2,
-      color: ['red', 'yellow', 'aqua'][Math.floor(Math.random() * 3)]
-    }));
 
-    globe
-      .pointsData(scamPoints)
-      .pointAltitude(d => 0.02 + d.size)
-      .pointRadius(d => 0.3 * d.size)
-      .pointColor(d => d.color)
-      .pointsTransitionDuration(2000);
-
-    const arcsData = [...Array(20)].map(() => {
-      const startLat = (Math.random() - 0.5) * 180;
-      const startLng = (Math.random() - 0.5) * 360;
-      const endLat = (Math.random() - 0.5) * 180;
-      const endLng = (Math.random() - 0.5) * 360;
-      return {
-        startLat, startLng, endLat, endLng,
-        type: ['RMW - Ransomware', 'IDS - Intrusion', 'BAD - Blacklist'][Math.floor(Math.random() * 3)],
-        color: ['#f0f', '#0ff', '#0f0'][Math.floor(Math.random() * 3)]
-      };
-    });
-
-    globe
-      .arcsData(arcsData)
-      .arcColor(d => d.color)
-      .arcAltitude(0.2)
-      .arcStroke(0.5)
-      .arcDashLength(0.4)
-      .arcDashGap(2)
-      .arcDashInitialGap(() => Math.random() * 5)
-      .arcDashAnimateTime(2000)
-      .onArcHover(d => {
-        const popup = document.getElementById('popup');
-        if (d) {
-          popup.style.display = 'block';
-          popup.innerHTML = `<b>${d.type}</b><br>From: (${d.startLat.toFixed(1)}, ${d.startLng.toFixed(1)})<br>To: (${d.endLat.toFixed(1)}, ${d.endLng.toFixed(1)})`;
-        } else {
-          popup.style.display = 'none';
-        }
-      });
-
-    document.addEventListener('mousemove', e => {
-      const popup = document.getElementById('popup');
-      popup.style.top = `${e.clientY + 10}px`;
-      popup.style.left = `${e.clientX + 10}px`;
-    });
-
-    function updateStats() {
-      const total = scamPoints.length;
-      const high = scamPoints.filter(d => d.color === 'red').length;
-      document.getElementById('total-threats').textContent = total;
-      document.getElementById('high-risk').textContent = high;
-      document.getElementById('active-now').textContent = Math.floor(Math.random() * total);
-      document.getElementById('new-last5m').textContent = Math.floor(Math.random() * 10);
-      if (demoRunning) setTimeout(updateStats, 5000);
-    }
-
-    function toggleDemo() {
-      demoRunning = !demoRunning;
-      document.getElementById('demoToggle').innerText = demoRunning ? 'DEMO ON' : 'DEMO OFF';
-      if (demoRunning) updateStats();
-    }
-
-    updateStats();
-  </script>
+  <!-- Menu điều hướng -->
+  <nav id="menu">
+    <div class="close-menu">×</div>
+    <a href="index.html">Trang chủ</a>
+    <a href="gtc.html">Tố cáo lừa đảo</a>
+    <a href="#">Danh sách lừa đảo</a>
+    <a href="#">Liên hệ</a>
+  </nav>
+</header>
+<main>
+  <div class="spinner"></div>
+  <div class="glow-text">Bản đồ lừa đảo trực quan</div>
+  <div class="info">Chúng tôi sẽ cập nhật tính năng này sớm...</div>
+</main>
 </body>
 </html>
