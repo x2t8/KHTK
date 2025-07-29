@@ -244,3 +244,5 @@ mediaElement.addEventListener('click', () => {
   lightboxImage.src = mediaElement.src;
   lightboxOverlay.style.display = 'flex';
 });
+
+

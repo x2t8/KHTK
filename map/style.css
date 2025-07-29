@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.header {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+#map {
+  height: 80vh;
+  width: 100%;
+}
+.sidebar {
+  position: fixed;
+  top: 120px;
+  right: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.sidebar h3 {
+  margin-top: 0;
+}
