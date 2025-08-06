@@ -225,7 +225,7 @@ export default function DigitalLaw() {
             Khái Niệm Pháp Lý Cơ Bản
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Những kiến thức nền tảng về luật sở hữu trí tu�� trong thời đại số
+            Những kiến thức nền tảng về luật sở hữu trí tuệ trong thời đại số
           </p>
         </div>
 
