@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        education: {
+          blue: "hsl(var(--education-blue))",
+          green: "hsl(var(--education-green))",
+          orange: "hsl(var(--education-orange))",
+          purple: "hsl(var(--education-purple))",
+          "light-blue": "hsl(var(--education-light-blue))",
+        },
+      },
+      backgroundImage: {
+        "gradient-education": "linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))",
       },
       borderRadius: {
         lg: "var(--radius)",
