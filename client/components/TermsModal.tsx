@@ -50,7 +50,7 @@ export default function TermsModal({
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slide-up">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-6 rounded-t-lg">
+        <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center space-x-3">
             <AlertCircle className="h-8 w-8 animate-warning-glow" />
             <div>
