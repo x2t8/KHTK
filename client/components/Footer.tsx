@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Tài liệu hữu ích</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="https://mic.gov.vn/Pages/VanBan/13436/Nghi-dinh-15-2020-ND-CP.html" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">Nghị định 15/2020/NĐ-CP</a></li>
+              <li><a href="https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Nghi-dinh-15-2020-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-buu-chinh-vien-thong-tan-so-vo-tuyen-dien-350499.aspx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">Nghị định 15/2020/NĐ-CP</a></li>
               <li><a href="https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Luat-An-ninh-mang-2018-351416.aspx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">Luật An ninh mạng 2018</a></li>
               <li><a href="https://www.mic.gov.vn/mic_2020/Pages/TinTuc/140962/Huong-dan-bao-cao-su-co-an-ninh-mang.html" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">Hướng dẫn báo cáo</a></li>
               <li><a href="https://www.sbv.gov.vn/webcenter/portal/vi/menu/rm/ndhttm" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">An toàn thanh toán</a></li>
