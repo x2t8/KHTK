@@ -108,15 +108,15 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
   useEffect(() => {
     const careMessages = [
       {
-        message: "💚 Bạn đang bảo vệ bản thân và gia đình khỏi lừa đảo",
+        message: "Bạn đang bảo vệ bản thân và gia đình khỏi lừa đảo",
         type: "care" as const,
       },
       {
-        message: "🛡️ Kiến thức là vũ khí mạnh nhất chống lại kẻ xấu",
+        message: "Kiến thức là vũ khí mạnh nhất chống lại kẻ xấu",
         type: "protection" as const,
       },
       {
-        message: "❤️ Hãy chia sẻ kiến thức này với người thân yêu",
+        message: "Hãy chia sẻ kiến thức này với người thân yêu",
         type: "care" as const,
       },
     ];
