@@ -21,16 +21,46 @@ export default function Header() {
               <span className="text-lg sm:text-xl font-bold text-gray-900">
                 Công Dân Số An Toàn
               </span>
-            </Link>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium">Trang chủ</Link>
-            <Link to="/scam-types" className="text-gray-700 hover:text-blue-600 font-medium">An toàn số</Link>
-            <Link to="/digital-ethics" className="text-gray-700 hover:text-blue-600 font-medium">Đạo đức số</Link>
-            <Link to="/ai-safety" className="text-gray-700 hover:text-blue-600 font-medium">AI An toàn</Link>
-            <Link to="/digital-law" className="text-gray-700 hover:text-blue-600 font-medium">Pháp luật số</Link>
-            <Link to="/digital-skills" className="text-gray-700 hover:text-blue-600 font-medium">Kỹ năng số</Link>
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
+              Trang chủ
+            </Link>
+            <Link
+              to="/scam-types"
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
+              An toàn số
+            </Link>
+            <Link
+              to="/digital-ethics"
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
+              Đạo đức số
+            </Link>
+            <Link
+              to="/ai-safety"
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
+              AI An toàn
+            </Link>
+            <Link
+              to="/digital-law"
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
+              Pháp luật số
+            </Link>
+            <Link
+              to="/digital-skills"
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
+              Kỹ năng số
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -38,7 +68,11 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100"
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -46,43 +80,43 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden border-t bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Trang chủ
               </Link>
-              <Link 
-                to="/scam-types" 
+              <Link
+                to="/scam-types"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 An toàn số
               </Link>
-              <Link 
-                to="/digital-ethics" 
+              <Link
+                to="/digital-ethics"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Đạo đức số
               </Link>
-              <Link 
-                to="/ai-safety" 
+              <Link
+                to="/ai-safety"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 AI An toàn
               </Link>
-              <Link 
-                to="/digital-law" 
+              <Link
+                to="/digital-law"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Pháp luật số
               </Link>
-              <Link 
-                to="/digital-skills" 
+              <Link
+                to="/digital-skills"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

@@ -1,12 +1,32 @@
-import { ArrowLeft, Phone, MessageSquare, Mail, CreditCard, AlertTriangle, CheckCircle, XCircle } from "lucide-react";
+import {
+  ArrowLeft,
+  Phone,
+  MessageSquare,
+  Mail,
+  CreditCard,
+  AlertTriangle,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
+import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
+import LearningProgress from "@/components/LearningProgress";
 
 export default function ScamTypes() {
+  // Initialize protective animations
+  useScrollReveal();
+  useStaggeredReveal();
   const scamDetails = [
     {
       id: "phone",
@@ -14,25 +34,26 @@ export default function ScamTypes() {
       title: "Lừa đảo qua điện thoại",
       danger: "Cực kỳ nguy hiểm",
       color: "text-red-600 bg-red-100",
-      description: "Kẻ lừa đảo gọi điện giả danh cơ quan công an, ngân hàng, tòa án để lừa thông tin cá nhân và tiền bạc.",
+      description:
+        "Kẻ lừa đảo gọi điện giả danh cơ quan công an, ngân hàng, tòa án để lừa thông tin cá nhân và tiền bạc.",
       techniques: [
         "Giả danh công an, kiểm sát viện",
         "Thông báo tài khoản bị khóa",
         "Yêu cầu chuyển tiền 'bảo toàn tài sản'",
-        "Đe dọa bắt giữ nếu không hợp tác"
+        "Đe dọa bắt giữ nếu không hợp tác",
       ],
       redFlags: [
         "Yêu cầu cung cấp mã OTP",
         "Đe dọa, gây áp lực tâm lý",
         "Không cho thời gian suy nghĩ",
-        "Yêu cầu chuyển tiền ngay lập tức"
+        "Yêu cầu chuyển tiền ngay lập tức",
       ],
       protection: [
         "Cúp máy ngay khi nghi ngờ",
         "Gọi lại số hotline chính thức",
         "Không cung cấp thông tin cá nhân",
-        "Tham khảo ý kiến người thân"
-      ]
+        "Tham khảo ý kiến người thân",
+      ],
     },
     {
       id: "sms",
@@ -40,25 +61,26 @@ export default function ScamTypes() {
       title: "Lừa đảo qua SMS",
       danger: "Nguy hiểm cao",
       color: "text-orange-600 bg-orange-100",
-      description: "Tin nhắn giả mạo thông báo trúng thưởng, khuyến mãi hoặc cảnh báo tài khoản để lừa click link độc hại.",
+      description:
+        "Tin nhắn giả mạo thông báo trúng thưởng, khuyến mãi hoặc cảnh báo tài khoản để lừa click link độc hại.",
       techniques: [
         "Thông báo trúng thưởng khủng",
         "Khuyến mãi hấp dẫn từ thương hiệu nổi tiếng",
         "Cảnh báo tài khoản bị hack",
-        "Link rút gọn che giấu đích đến"
+        "Link rút gọn che giấu đích đến",
       ],
       redFlags: [
         "Số điện thoại lạ, không rõ nguồn gốc",
         "Yêu cầu click link ngay lập tức",
         "Thông tin quá hấp dẫn, không hợp lý",
-        "Lỗi chính tả, ngữ pháp"
+        "Lỗi chính tả, ngữ pháp",
       ],
       protection: [
         "Không click vào link lạ",
         "Kiểm tra tên miền website",
         "Xác minh qua kênh chính thức",
-        "Sử dụng app diệt virus"
-      ]
+        "Sử dụng app diệt virus",
+      ],
     },
     {
       id: "email",
@@ -66,25 +88,26 @@ export default function ScamTypes() {
       title: "Lừa đảo qua Email",
       danger: "Nguy hiểm cao",
       color: "text-yellow-600 bg-yellow-100",
-      description: "Email phishing giả mạo ngân hàng, dịch vụ online để đánh cắp thông tin đăng nhập và tài khoản.",
+      description:
+        "Email phishing giả mạo ngân hàng, dịch vụ online để đánh cắp thông tin đăng nhập và tài khoản.",
       techniques: [
         "Giả mạo email ngân hàng",
         "Thông báo cập nhật bảo mật",
         "Hóa đơn giả từ dịch vụ online",
-        "Đính kèm file độc hại"
+        "Đính kèm file độc hại",
       ],
       redFlags: [
         "Email từ địa chỉ lạ",
         "Yêu cầu cập nhật thông tin khẩn cấp",
         "Logo, thiết kế không chính thức",
-        "File đính kèm đáng ngờ"
+        "File đính kèm đáng ngờ",
       ],
       protection: [
         "Kiểm tra địa chỉ email gửi",
         "Đăng nhập trực tiếp vào website",
         "Không tải file đính kèm lạ",
-        "Báo cáo email spam"
-      ]
+        "Báo cáo email spam",
+      ],
     },
     {
       id: "financial",
@@ -92,42 +115,47 @@ export default function ScamTypes() {
       title: "Lừa đảo tài chính",
       danger: "Cực kỳ nguy hiểm",
       color: "text-purple-600 bg-purple-100",
-      description: "Các hình thức đầu tư ma, sàn forex giả, vay tiền online với lãi suất hấp dẫn để chiếm đoạt tài sản.",
+      description:
+        "Các hình thức đầu tư ma, sàn forex giả, vay tiền online với lãi suất hấp dẫn để chiếm đoạt tài sản.",
       techniques: [
         "Sàn forex, crypto giả",
         "Đầu tư đa cấp online",
         "Vay tiền lãi suất 0%",
-        "HYIP - lãi suất siêu cao"
+        "HYIP - lãi suất siêu cao",
       ],
       redFlags: [
         "Lãi suất quá cao, không hợp lý",
         "Không có giấy phép hoạt động",
         "Yêu cầu nạp tiền trước",
-        "Không thể rút tiền"
+        "Không thể rút tiền",
       ],
       protection: [
         "Kiểm tra giấy phép kinh doanh",
         "Tìm hiểu kỹ trước khi đầu tư",
         "Không tin vào lời hứa lãi cao",
-        "Tham khảo chuyên gia tài chính"
-      ]
-    }
+        "Tham khảo chuyên gia tài chính",
+      ],
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-rose-100 via-red-50 to-orange-100">
       <Header />
       <DisclaimerBanner />
 
       {/* Page Header */}
       <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AlertTriangle className="h-16 w-16 mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <AlertTriangle className="h-16 w-16 mx-auto mb-6 animate-warning-glow" />
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">
             Các Dạng Lừa Đảo Chi Tiết
           </h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Tìm hiểu sâu về từng loại lừa đảo để bảo vệ bản thân một cách hiệu quả nhất
+          <p
+            className="text-xl opacity-90 max-w-2xl mx-auto animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
+          >
+            Tìm hiểu sâu về từng loại lừa đảo để bảo vệ bản thân một cách hiệu
+            quả nhất
           </p>
         </div>
       </div>
@@ -222,13 +250,18 @@ export default function ScamTypes() {
                 Bạn đã sẵn sàng bảo vệ bản thân?
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Chia sẻ kiến thức này với gia đình và bạn bè để cùng nhau chống lại lừa đảo
+                Chia sẻ kiến thức này với gia đình và bạn bè để cùng nhau chống
+                lại lừa đảo
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary">
                   Chia sẻ với người thân
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-600"
+                >
                   Tải cẩm nang PDF
                 </Button>
               </div>
@@ -236,6 +269,7 @@ export default function ScamTypes() {
           </Card>
         </div>
       </div>
+      <LearningProgress currentPage="/scam-types" />
     </div>
   );
 }

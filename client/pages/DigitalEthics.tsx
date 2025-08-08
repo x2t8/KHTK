@@ -1,9 +1,27 @@
-import { Heart, MessageCircle, Users, Eye, Lock, AlertCircle, CheckCircle, XCircle, ThumbsUp, ThumbsDown } from "lucide-react";
+import {
+  Heart,
+  MessageCircle,
+  Users,
+  Eye,
+  Lock,
+  AlertCircle,
+  CheckCircle,
+  XCircle,
+  ThumbsUp,
+  ThumbsDown,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
+import LearningProgress from "@/components/LearningProgress";
 
 export default function DigitalEthics() {
   const ethicsRules = [
@@ -15,14 +33,14 @@ export default function DigitalEthics() {
         "Sử dụng ngôn ngữ lịch sự, tôn trọng",
         "Lắng nghe ý kiến khác biệt",
         "Thể hiện sự đồng cảm",
-        "Ghi nhận đóng góp của người khác"
+        "Ghi nhận đóng góp của người khác",
       ],
       donts: [
         "Sử dụng ngôn từ thô tục, xúc phạm",
         "Tấn công cá nhân thay vì thảo luận ý kiến",
         "Phân biệt đối xử",
-        "Bắt nạt hay quấy rối"
-      ]
+        "Bắt nạt hay quấy rối",
+      ],
     },
     {
       icon: MessageCircle,
@@ -32,14 +50,14 @@ export default function DigitalEthics() {
         "Kiểm tra thông tin trước khi chia sẻ",
         "Trích dẫn nguồn tin đáng tin cậy",
         "Thừa nhận khi mắc lỗi",
-        "Đóng góp nội dung có giá trị"
+        "Đóng góp nội dung có giá trị",
       ],
       donts: [
         "Chia sẻ tin giả, tin đồn",
         "Spam hay flood tin nhắn",
         "Clickbait gây hiểu lầm",
-        "Đăng nội dung không phù hợp"
-      ]
+        "Đăng nội dung không phù hợp",
+      ],
     },
     {
       icon: Users,
@@ -49,32 +67,33 @@ export default function DigitalEthics() {
         "Khuyến khích thảo luận xây dựng",
         "Hỗ trợ thành viên mới",
         "Báo cáo hành vi không phù hợp",
-        "Tham gia các hoạt động tích cực"
+        "Tham gia các hoạt động tích cực",
       ],
       donts: [
         "Tạo drama hay xung đột",
         "Phân chia cộng đồng",
         "Né tránh trách nhiệm",
-        "Làm tổn hại danh tiếng nhóm"
-      ]
+        "Làm tổn hại danh tiếng nhóm",
+      ],
     },
     {
       icon: Eye,
       title: "Bảo vệ quyền riêng tư",
-      description: "Tôn trọng và bảo vệ thông tin cá nhân của bản thân và người khác",
+      description:
+        "Tôn trọng và bảo vệ thông tin cá nhân của bản thân và người khác",
       dos: [
         "Xin phép trước khi chia sẻ ảnh/thông tin của người khác",
         "Sử dụng cài đặt riêng tư phù hợp",
         "Bảo vệ thông tin nhạy cảm",
-        "Giáo dục người thân về an toàn"
+        "Giáo dục người thân về an toàn",
       ],
       donts: [
         "Đăng thông tin cá nhân nhạy cảm",
         "Theo dõi hay stalking người khác",
         "Chia sẻ ảnh riêng tư không được phép",
-        "Xâm phạm tài khoản của người khác"
-      ]
-    }
+        "Xâm phạm tài khoản của người khác",
+      ],
+    },
   ];
 
   const communicationTips = [
@@ -85,8 +104,8 @@ export default function DigitalEthics() {
         "Rõ ràng và súc tích",
         "Sử dụng emoji phù hợp để thể hiện cảm xúc",
         "Đọc kỹ trước khi trả lời",
-        "Tránh viết hoa toàn bộ (có vẻ như đang la hét)"
-      ]
+        "Tránh viết hoa toàn bộ (có vẻ như đang la hét)",
+      ],
     },
     {
       icon: AlertCircle,
@@ -95,8 +114,8 @@ export default function DigitalEthics() {
         "Bình tĩnh, không phản ứng cảm xúc",
         "Tìm điểm chung thay vì nhấn mạnh khác biệt",
         "Chuyển sang chat riêng nếu cần",
-        "Biết khi nào nên dừng cuộc tranh luận"
-      ]
+        "Biết khi nào nên dừng cuộc tranh luận",
+      ],
     },
     {
       icon: ThumbsUp,
@@ -105,36 +124,36 @@ export default function DigitalEthics() {
         "Ghi nhận và khen ngợi đóng góp tích cực",
         "Chia sẻ kinh nghiệm và kiến thức",
         "Hỗ trợ người khác khi có thể",
-        "Tham gia thảo luận một cách tích cực"
-      ]
-    }
+        "Tham gia thảo luận một cách tích cực",
+      ],
+    },
   ];
 
   const digitalWellbeing = [
     {
       title: "Cân bằng thời gian online",
       description: "Sử dụng công nghệ một cách có ý thức",
-      icon: "⏰"
+      icon: "⏰",
     },
     {
       title: "Tránh nghiện mạng xã hội",
       description: "Nhận biết và kiểm soát thói quen sử dụng",
-      icon: "📱"
+      icon: "📱",
     },
     {
       title: "Bảo vệ sức khỏe tinh thần",
       description: "Tránh so sánh và áp lực từ mạng xã hội",
-      icon: "🧠"
+      icon: "🧠",
     },
     {
       title: "Học hỏi liên tục",
       description: "Sử dụng internet để phát triển bản thân",
-      icon: "📚"
-    }
+      icon: "📚",
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100">
       <Header />
       <DisclaimerBanner />
 
@@ -146,7 +165,8 @@ export default function DigitalEthics() {
             Đạo Đức Số & Giao Tiếp Online
           </h1>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Học cách ứng xử văn minh, tôn trọng và xây dựng cộng đồng mạng tích cực
+            Học cách ứng xử văn minh, tôn trọng và xây dựng cộng đồng mạng tích
+            cực
           </p>
         </div>
       </div>
@@ -220,14 +240,15 @@ export default function DigitalEthics() {
       </div>
 
       {/* Communication Tips */}
-      <div className="bg-gray-50 py-20">
+      <div className="bg-gradient-to-br from-purple-50 to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Kỹ Năng Giao Tiếp Online
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Những mẹo thực tế để giao tiếp hiệu quả và xây dựng mối quan hệ tích cực
+              Những mẹo thực tế để giao tiếp hiệu quả và xây dựng mối quan hệ
+              tích cực
             </p>
           </div>
 
@@ -267,7 +288,10 @@ export default function DigitalEthics() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {digitalWellbeing.map((item, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="text-center hover:shadow-lg transition-shadow"
+            >
               <CardContent className="p-6">
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
@@ -285,20 +309,26 @@ export default function DigitalEthics() {
             Cùng Xây Dựng Internet Tích Cực!
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Mỗi hành động nhỏ của bạn đều góp phần tạo nên một môi trường mạng an toàn và tích cực
+            Mỗi hành động nhỏ của bạn đều góp phần tạo nên một môi trường mạng
+            an toàn và tích cực
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary">
               <Heart className="h-5 w-5 mr-2" />
               Cam kết thực hành
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-purple-600"
+            >
               <Users className="h-5 w-5 mr-2" />
               Chia sẻ với bạn bè
             </Button>
           </div>
         </div>
       </div>
+      <LearningProgress currentPage="/digital-ethics" />
     </div>
   );
 }

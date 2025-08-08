@@ -1,9 +1,29 @@
-import { Bot, Brain, Eye, Shield, AlertTriangle, CheckCircle, XCircle, Zap, Camera, Mic, FileText, Search } from "lucide-react";
+import {
+  Bot,
+  Brain,
+  Eye,
+  Shield,
+  AlertTriangle,
+  CheckCircle,
+  XCircle,
+  Zap,
+  Camera,
+  Mic,
+  FileText,
+  Search,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
+import LearningProgress from "@/components/LearningProgress";
 
 export default function AISafety() {
   const aiApplications = [
@@ -15,20 +35,20 @@ export default function AISafety() {
         "Hỗ trợ học tập và nghiên cứu",
         "Viết và chỉnh sửa văn bản",
         "Giải đáp thắc mắc nhanh chóng",
-        "Brainstorming ý tưởng"
+        "Brainstorming ý tưởng",
       ],
       risks: [
         "Thông tin có thể không chính xác",
         "Thiếu suy nghĩ phản biện",
         "Phụ thuộc quá mức vào AI",
-        "Vi phạm bản quyền nếu sao chép"
+        "Vi phạm bản quyền nếu sao chép",
       ],
       tips: [
         "Luôn kiểm tra thông tin từ AI",
         "Sử dụng AI như công cụ hỗ trợ, không thay thế",
         "Không chia sẻ thông tin nhạy cảm",
-        "Ghi nhận nguồn khi sử dụng AI"
-      ]
+        "Ghi nhận nguồn khi sử dụng AI",
+      ],
     },
     {
       icon: Camera,
@@ -38,20 +58,20 @@ export default function AISafety() {
         "Tạo artwork và illustration",
         "Design đồ họa nhanh chóng",
         "Concept art và prototype",
-        "Giáo dục và giải trí"
+        "Giáo dục và giải trí",
       ],
       risks: [
         "Deepfake và hình ảnh giả",
         "Vi phạm bản quyền hình ảnh",
         "Nội dung không phù hợp",
-        "Nhầm lẫn thật-giả"
+        "Nhầm lẫn thật-giả",
       ],
       tips: [
         "Kiểm tra nguồn gốc hình ảnh",
         "Sử dụng watermark khi cần",
         "Không tạo hình ảnh có hại",
-        "Tôn trọng quyền riêng tư người khác"
-      ]
+        "Tôn trọng quyền riêng tư người khác",
+      ],
     },
     {
       icon: Mic,
@@ -61,20 +81,20 @@ export default function AISafety() {
         "Hỗ trợ người khuyết tật",
         "Tạo nội dung audio",
         "Học ngoại ngữ",
-        "Chatbot có giọng nói"
+        "Chatbot có giọng nói",
       ],
       risks: [
         "Voice deepfake lừa đảo",
         "Giả mạo giọng nói người khác",
         "Tin tức giả với âm thanh",
-        "Quấy rối qua giọng nói AI"
+        "Quấy rối qua giọng nói AI",
       ],
       tips: [
         "Xác thực qua nhiều kênh",
         "Nghi ngờ cuộc gọi lạ",
         "Không tin hoàn toàn vào giọng nói",
-        "Báo cáo nếu gặp voice deepfake"
-      ]
+        "Báo cáo nếu gặp voice deepfake",
+      ],
     },
     {
       icon: Search,
@@ -84,21 +104,21 @@ export default function AISafety() {
         "Tìm kiếm thông tin chính xác",
         "Phân tích dữ liệu phức tạp",
         "Tóm tắt nội dung dài",
-        "Dịch thuật tự động"
+        "Dịch thuật tự động",
       ],
       risks: [
         "Bias trong kết quả tìm kiếm",
         "Thông tin thiên lệch",
         "Filter bubble effect",
-        "Mất khả năng tư duy độc lập"
+        "Mất khả năng tư duy độc lập",
       ],
       tips: [
         "So sánh nhiều nguồn thông tin",
-        "Tìm hiểu cách AI hoạt độnng",
+        "Tìm hiểu cách AI hoạt động",
         "Đặt câu hỏi phản biện",
-        "Giữ thói quen suy nghĩ độc lập"
-      ]
-    }
+        "Giữ thói quen suy nghĩ độc lập",
+      ],
+    },
   ];
 
   const deepfakeDetection = [
@@ -109,8 +129,8 @@ export default function AISafety() {
         "Đồng bộ môi-âm thanh kém",
         "Chất lượng ảnh không đồng đều",
         "Ánh sáng và bóng đổ lạ",
-        "Tóc và viền mặt mờ ảo"
-      ]
+        "Tóc và viền mặt mờ ảo",
+      ],
     },
     {
       type: "Audio Deepfake",
@@ -119,8 +139,8 @@ export default function AISafety() {
         "Tốc độ nói không nhất quán",
         "Âm thanh nền bất thường",
         "Phát âm một số từ kỳ lạ",
-        "Chất lượng âm thanh khác biệt"
-      ]
+        "Chất lượng âm thanh khác biệt",
+      ],
     },
     {
       type: "Text AI-Generated",
@@ -129,9 +149,9 @@ export default function AISafety() {
         "Thiếu cá tính, cảm xúc cá nhân",
         "Lặp lại cấu trúc câu",
         "Thông tin chung chung, mơ hồ",
-        "Không có trải nghiệm cụ thể"
-      ]
-    }
+        "Không có trải nghiệm cụ thể",
+      ],
+    },
   ];
 
   const aiEthics = [
@@ -142,18 +162,18 @@ export default function AISafety() {
         "Minh bạch về việc sử dụng AI",
         "Không tạo nội dung có hại",
         "Tôn trọng quyền riêng tư",
-        "Không phân biệt đối xử"
-      ]
+        "Không phân biệt đối xử",
+      ],
     },
     {
       icon: Eye,
-      title: "Nhậnn biết AI-generated content",
+      title: "Nhận biết AI-generated content",
       principles: [
         "Luôn kiểm tra nguồn gốc",
         "Tìm hiểu các dấu hiệu AI",
         "Sử dụng công cụ detection",
-        "Giáo dục người khác"
-      ]
+        "Giáo dục người khác",
+      ],
     },
     {
       icon: Brain,
@@ -162,13 +182,13 @@ export default function AISafety() {
         "Đặt câu hỏi về thông tin AI",
         "So sánh nhiều nguồn",
         "Phát triển critical thinking",
-        "Không phụ thuộc hoàn toàn vào AI"
-      ]
-    }
+        "Không phụ thuộc hoàn toàn vào AI",
+      ],
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100">
       <Header />
       <DisclaimerBanner />
 
@@ -180,7 +200,8 @@ export default function AISafety() {
             AI An Toàn & Thông Minh
           </h1>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Tìm hiểu cách sử dụng AI một cách an toàn, hiệu quả và có trách nhiệm
+            Tìm hiểu cách sử dụng AI một cách an toàn, hiệu quả và có trách
+            nhiệm
           </p>
         </div>
       </div>
@@ -270,7 +291,7 @@ export default function AISafety() {
       </div>
 
       {/* Deepfake Detection */}
-      <div className="bg-gray-50 py-20">
+      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -319,7 +340,10 @@ export default function AISafety() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {aiEthics.map((ethics, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="text-center hover:shadow-lg transition-shadow"
+            >
               <CardHeader>
                 <ethics.icon className="h-12 w-12 text-purple-600 mx-auto mb-4" />
                 <CardTitle className="text-xl">{ethics.title}</CardTitle>
@@ -329,7 +353,9 @@ export default function AISafety() {
                   {ethics.principles.map((principle, idx) => (
                     <li key={idx} className="flex items-start space-x-3">
                       <Zap className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 text-sm text-left">{principle}</span>
+                      <span className="text-gray-700 text-sm text-left">
+                        {principle}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -346,20 +372,26 @@ export default function AISafety() {
             Sẵn Sàng Sử Dụng AI An Toàn?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            AI là công cụ mạnh mẽ - hãy sử dụng một cách thông minh và có trách nhiệm
+            AI là công cụ mạnh mẽ - hãy sử dụng một cách thông minh và có trách
+            nhiệm
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary">
               <Bot className="h-5 w-5 mr-2" />
               Thực hành với AI
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-600"
+            >
               <Shield className="h-5 w-5 mr-2" />
               Tải cẩm nang AI
             </Button>
           </div>
         </div>
       </div>
+      <LearningProgress currentPage="/ai-safety" />
     </div>
   );
 }

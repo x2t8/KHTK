@@ -1,9 +1,30 @@
-import { Scale, Copyright, Shield, FileText, Image, Music, Video, AlertTriangle, CheckCircle, XCircle, Gavel, Users, Lock } from "lucide-react";
+import {
+  Scale,
+  Copyright,
+  Shield,
+  FileText,
+  Image,
+  Music,
+  Video,
+  AlertTriangle,
+  CheckCircle,
+  XCircle,
+  Gavel,
+  Users,
+  Lock,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
+import LearningProgress from "@/components/LearningProgress";
 
 export default function DigitalLaw() {
   const copyrightTypes = [
@@ -12,19 +33,24 @@ export default function DigitalLaw() {
       title: "Văn bản & Tài liệu",
       description: "Bài viết, sách, báo, luận văn, bài nghiên cứu",
       protectionTime: "Trọn đời tác giả + 50 năm",
-      examples: ["Blog posts", "E-books", "Báo cáo nghiên cứu", "Nội dung website"],
+      examples: [
+        "Blog posts",
+        "E-books",
+        "Báo cáo nghiên cứu",
+        "Nội dung website",
+      ],
       violations: [
         "Copy/paste toàn bộ bài viết",
         "Dịch và đăng lại không phép",
         "Sử dụng nội dung không trích dẫn",
-        "Bán lại tài liệu có bản quyền"
+        "Bán lại tài liệu có bản quyền",
       ],
       goodPractices: [
         "Trích dẫn nguồn rõ ràng",
         "Xin phép tác giả khi cần",
         "Sử dụng fair use hợp lý",
-        "Tạo nội dung gốc của riêng mình"
-      ]
+        "Tạo nội dung gốc của riêng mình",
+      ],
     },
     {
       icon: Image,
@@ -36,33 +62,38 @@ export default function DigitalLaw() {
         "Tải và sử dụng ảnh từ Google Images",
         "Crop watermark của tác giả",
         "Sử dụng logo thương hiệu trái phép",
-        "Bán ảnh không phải của mình"
+        "Bán ảnh không phải của mình",
       ],
       goodPractices: [
         "Mua ảnh từ stock photo sites",
         "Sử dụng ảnh Creative Commons",
         "Tự chụp ảnh hoặc tạo đồ họa",
-        "Xin phép photographer/designer"
-      ]
+        "Xin phép photographer/designer",
+      ],
     },
     {
       icon: Music,
       title: "Âm nhạc & Audio",
       description: "Bài hát, nhạc nền, podcast, sound effects",
       protectionTime: "50-70 năm từ khi phát hành",
-      examples: ["Bài hát pop", "Nhạc phim", "Jingle quảng cáo", "Sound effects"],
+      examples: [
+        "Bài hát pop",
+        "Nhạc phim",
+        "Jingle quảng cáo",
+        "Sound effects",
+      ],
       violations: [
         "Sử dụng nhạc làm nền video YouTube",
         "Stream nhạc có bản quyền trái phép",
         "Remix không xin phép",
-        "Sử dụng trong sản phẩm thương mại"
+        "Sử dụng trong sản phẩm thương mại",
       ],
       goodPractices: [
         "Mua license từ tác giả/label",
         "Sử dụng royalty-free music",
         "Tạo nhạc gốc",
-        "Sử dụng Creative Commons music"
-      ]
+        "Sử dụng Creative Commons music",
+      ],
     },
     {
       icon: Video,
@@ -74,46 +105,47 @@ export default function DigitalLaw() {
         "Tải lên phim bản quyền",
         "Sử dụng clip phim trong video",
         "Re-upload video của người khác",
-        "Screen recording Netflix, Disney+"
+        "Screen recording Netflix, Disney+",
       ],
       goodPractices: [
         "Tạo video gốc 100%",
         "Mua license sử dụng",
         "Fair use cho review/giáo dục",
-        "Xin phép tác giả video"
-      ]
-    }
+        "Xin phép tác giả video",
+      ],
+    },
   ];
 
   const legalConcepts = [
     {
       icon: Copyright,
       title: "Bản quyền (Copyright)",
-      definition: "Quyền độc quyền của tác giả đối với tác phẩm do mình sáng tạo",
+      definition:
+        "Quyền độc quyền của tác giả đối với tác phẩm do mình sáng tạo",
       scope: "Tự động có từ khi tác phẩm được tạo ra, không cần đăng ký",
-      examples: ["Sách", "Nhạc", "Phim", "Phần mềm", "Website"]
+      examples: ["Sách", "Nhạc", "Phim", "Phần mềm", "Website"],
     },
     {
       icon: Shield,
       title: "Sở hữu trí tuệ",
       definition: "Quyền pháp lý đối với các sáng tạo trí tuệ",
       scope: "Bao gồm bản quyền, thương hiệu, bằng sáng chế",
-      examples: ["Logo Apple", "Công thức Coca-Cola", "Thuật toán Google"]
+      examples: ["Logo Apple", "Công thức Coca-Cola", "Thuật toán Google"],
     },
     {
       icon: Users,
       title: "Fair Use/Sử dụng hợp lý",
       definition: "Sử dụng tác phẩm có bản quyền mà không cần xin phép",
       scope: "Giáo dục, nghiên cứu, phê bình, tin tức",
-      examples: ["Review phim", "Trích dẫn trong luận văn", "Parody"]
+      examples: ["Review phim", "Trích dẫn trong luận văn", "Parody"],
     },
     {
       icon: Lock,
       title: "Creative Commons",
       definition: "Hệ thống license cho phép chia sẻ có điều kiện",
       scope: "Các mức độ từ attribution đến no derivatives",
-      examples: ["Wikipedia", "Unsplash", "Freepik CC"]
-    }
+      examples: ["Wikipedia", "Unsplash", "Freepik CC"],
+    },
   ];
 
   const sharingGuidelines = [
@@ -123,14 +155,14 @@ export default function DigitalLaw() {
         "Chia sẻ với mục đích tích cực",
         "Có sự đồng ý của chủ thể",
         "Bảo vệ thông tin nhạy cảm",
-        "Kiểm soát quyền riêng tư"
+        "Kiểm soát quyền riêng tư",
       ],
       unsafe: [
         "Doxxing - công khai thông tin cá nhân",
         "Chia sẻ ảnh riêng tư không phép",
         "Leak thông tin liên lạc",
-        "Tiết lộ địa chỉ, CMND"
-      ]
+        "Tiết lộ địa chỉ, CMND",
+      ],
     },
     {
       category: "Tin tức & Thông tin",
@@ -138,14 +170,14 @@ export default function DigitalLaw() {
         "Kiểm tra nguồn tin đáng tin cậy",
         "Trích dẫn đầy đủ nguồn gốc",
         "Phân biệt sự kiện và ý kiến",
-        "Cập nhật khi có thông tin mới"
+        "Cập nhật khi có thông tin mới",
       ],
       unsafe: [
         "Chia sẻ tin fake news",
         "Bịa đặt thông tin",
         "Cắt ghép gây hiểu lầm",
-        "Chia sẻ tin đồn chưa xác thực"
-      ]
+        "Chia sẻ tin đồn chưa xác thực",
+      ],
     },
     {
       category: "Nội dung thương mại",
@@ -153,15 +185,15 @@ export default function DigitalLaw() {
         "Khai báo hợp tác thương mại",
         "Tuân thủ luật quảng cáo",
         "Honest review và feedback",
-        "Respect thương hiệu"
+        "Respect thương hiệu",
       ],
       unsafe: [
         "Quảng cáo ẩn không khai báo",
         "Fake review để bôi nhọ",
         "Sử dụng logo thương hiệu trái phép",
-        "Pyramid scheme, MLM lừa đảo"
-      ]
-    }
+        "Pyramid scheme, MLM lừa đảo",
+      ],
+    },
   ];
 
   const legalProtection = [
@@ -173,8 +205,8 @@ export default function DigitalLaw() {
         "Sử dụng watermark cho hình ảnh",
         "Đăng ký bản quyền nếu cần thiết",
         "Lưu trữ bằng chứng sáng tạo",
-        "Theo dõi việc sử dụng trái phép"
-      ]
+        "Theo dõi việc sử dụng trái phép",
+      ],
     },
     {
       title: "Khi bị vi phạm bản quyền",
@@ -184,8 +216,8 @@ export default function DigitalLaw() {
         "Liên hệ yêu cầu gỡ bỏ",
         "Gửi DMCA takedown notice",
         "Tìm kiếm tư vấn pháp lý",
-        "Khởi kiện nếu cần thiết"
-      ]
+        "Khởi kiện nếu cần thiết",
+      ],
     },
     {
       title: "Tuân thủ khi sử dụng",
@@ -195,13 +227,13 @@ export default function DigitalLaw() {
         "Xin phép tác giả khi không chắc",
         "Ghi nhận nguồn đầy đủ",
         "Sử dụng đúng mục đích cho phép",
-        "Tôn trọng điều khoản license"
-      ]
-    }
+        "Tôn trọng điều khoản license",
+      ],
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-violet-50 to-purple-100">
       <Header />
       <DisclaimerBanner />
 
@@ -213,7 +245,8 @@ export default function DigitalLaw() {
             Pháp Luật Số & Bản Quyền
           </h1>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Hiểu biết về bản quyền, sở hữu trí tuệ và chia sẻ thông tin hợp pháp trong thế giới số
+            Hiểu biết về bản quyền, sở hữu trí tuệ và chia sẻ thông tin hợp pháp
+            trong thế giới số
           </p>
         </div>
       </div>
@@ -231,14 +264,21 @@ export default function DigitalLaw() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {legalConcepts.map((concept, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="text-center hover:shadow-lg transition-shadow"
+            >
               <CardHeader>
                 <concept.icon className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
                 <CardTitle className="text-lg">{concept.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-gray-600 mb-3">{concept.definition}</p>
-                <Badge variant="outline" className="mb-3">{concept.scope}</Badge>
+                <p className="text-sm text-gray-600 mb-3">
+                  {concept.definition}
+                </p>
+                <Badge variant="outline" className="mb-3">
+                  {concept.scope}
+                </Badge>
                 <div className="text-xs text-gray-500">
                   VD: {concept.examples.slice(0, 2).join(", ")}
                 </div>
@@ -249,7 +289,7 @@ export default function DigitalLaw() {
       </div>
 
       {/* Copyright Types */}
-      <div className="bg-gray-50 py-20">
+      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -421,7 +461,8 @@ export default function DigitalLaw() {
           Kiến Thức Pháp Luật = Tự Do Sáng Tạo
         </h2>
         <p className="text-xl text-gray-600 mb-8">
-          Khi hiểu rõ luật pháp, bạn có thể sáng tạo và chia sẻ một cách tự tin và an toàn
+          Khi hiểu rõ luật pháp, bạn có thể sáng tạo và chia sẻ một cách tự tin
+          và an toàn
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700">
@@ -434,6 +475,7 @@ export default function DigitalLaw() {
           </Button>
         </div>
       </div>
+      <LearningProgress currentPage="/digital-law" />
     </div>
   );
 }
